@@ -1,3 +1,10 @@
+.DS_Store
+.idea
+*~
+*.iml
+*.log
+.m2/repository
+
 target/
 pom.xml.tag
 pom.xml.releaseBackup
