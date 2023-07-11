@@ -1,4 +1,4 @@
-package com.test.query.price;
+package com.demo.price;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
