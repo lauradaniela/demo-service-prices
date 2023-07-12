@@ -18,7 +18,7 @@ public class PriceController {
 
     @PostMapping
     public ResponseEntity<ResponseQueryPrice> queryPrices(@Valid @RequestBody RequestQueryPrice requestQueryPrice){
-        return ResponseEntity.ok(new ResponseQueryPrice());
+        return ResponseEntity.noContent().build();
     }
 
 }
