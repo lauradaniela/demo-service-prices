@@ -16,6 +16,7 @@
 		<java.version>11</java.version>
         <cucumber.version>7.11.2</cucumber.version>
         <junit.version>5.9.1</junit.version>
+		<flyway.version>8.5.13</flyway.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -25,6 +26,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>${flyway.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -73,12 +79,6 @@
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit-platform-engine</artifactId>
 			<version>${cucumber.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-suite</artifactId>
-			<version>1.9.0</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
