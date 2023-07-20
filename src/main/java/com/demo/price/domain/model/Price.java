@@ -4,12 +4,15 @@ import lombok.Builder;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Getter
 @Builder
 public class Price {
 
-    private long id;
+    public static final DateTimeFormatter FORMAT_TIME_PRICE = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+    private Long id;
 
     private LocalDateTime startDate;
 
@@ -17,9 +20,10 @@ public class Price {
 
     private Brand brand;
 
-    private long productId;
+    private Product product;
 
-    private int priority;
+    private Integer priority;
 
     private Amount amount;
+
 }

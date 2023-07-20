@@ -5,9 +5,9 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class Brand {
+public class Product {
 
-    private Integer id;
+    private Long id;
 
     private String name;
 }

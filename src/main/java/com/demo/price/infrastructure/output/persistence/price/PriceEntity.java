@@ -3,8 +3,9 @@ package com.demo.price.infrastructure.output.persistence.price;
 import com.demo.price.infrastructure.output.persistence.brand.BrandEntity;
 import com.demo.price.infrastructure.output.persistence.product.ProductEntity;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +17,8 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Getter
-@Builder(setterPrefix = "with")
+@Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "price")
@@ -24,7 +26,7 @@ public class PriceEntity {
 
     @Id
     @Column(name = "id", insertable = false, updatable = false, nullable = false)
-    private long id;
+    private Long id;
 
     @Column(nullable = false)
     private LocalDateTime startDate;

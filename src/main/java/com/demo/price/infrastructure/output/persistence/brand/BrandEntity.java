@@ -2,8 +2,9 @@ package com.demo.price.infrastructure.output.persistence.brand;
 
 import com.demo.price.infrastructure.output.persistence.price.PriceEntity;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,14 +15,15 @@ import java.util.List;
 
 @Entity
 @Getter
-@Builder(setterPrefix = "with")
+@Setter
+@NoArgsConstructor
 @AllArgsConstructor
 @Table(name="brand")
 public class BrandEntity {
 
     @Id
     @Column(name = "id", updatable = false, nullable = false)
-    private int id;
+    private Integer id;
 
     @Column(name = "name", nullable = false)
     private String name;
