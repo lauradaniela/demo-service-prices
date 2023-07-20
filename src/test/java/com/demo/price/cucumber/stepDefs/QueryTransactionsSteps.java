@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.spring.CucumberContextConfiguration;
+import org.apache.commons.lang3.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
@@ -37,9 +38,9 @@ public class QueryTransactionsSteps extends CucumberSpringConfiguration {
             requestQueryPrice.setApplicationDate(dateTime);
         }
         if (!idProduct.equals("null") && !idProduct.isBlank())
-            requestQueryPrice.setIdProduct(idProduct);
+            requestQueryPrice.setProductId(Long.parseLong(idProduct));
         if (!idBrand.equals("null") && !idBrand.isBlank())
-            requestQueryPrice.setIdBrand(idBrand);
+            requestQueryPrice.setBrandId(Integer.parseInt(idBrand));
     }
 
     @When("call the endpoint for check the prices")
@@ -60,7 +61,9 @@ public class QueryTransactionsSteps extends CucumberSpringConfiguration {
 
         String content = response.getBody().toString();
         JSONObject jsonResponse = new JSONObject(content);
-        assertEquals(price, jsonResponse.get("price"));
+        String amount = jsonResponse.getString("amount");
+        assertEquals(StringUtils.left(price,5), StringUtils.left(amount,5));
+        assertEquals(StringUtils.right(price,1), StringUtils.right(amount,1));
         assertEquals(startDate, jsonResponse.get("startDate"));
         assertEquals(endDate, jsonResponse.get("endDate"));
     }

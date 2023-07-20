@@ -17,6 +17,7 @@
         <cucumber.version>7.11.2</cucumber.version>
         <junit.version>5.9.1</junit.version>
 		<flyway.version>8.5.13</flyway.version>
+		<junit.platform.version>1.9.0</junit.platform.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -51,6 +52,10 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
 		<!-- test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -79,6 +84,12 @@
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit-platform-engine</artifactId>
 			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-suite</artifactId>
+			<version>${junit.platform.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
